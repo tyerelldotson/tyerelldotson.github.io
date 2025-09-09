@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Though I was born and raised in Virginia, my career in the Air Force eventually brought me to Texas, where I have lived for the past five years while continuing to grow both personally and professionally. I’m currently pursuing a Master’s degree in Social Data Analytics & Research (graduating May 2026) because I believe in the importance of data-driven decision making.\nBut how did I find myself at the doorstep of data? Over the last 8+ years, I’ve built experience in behavioral health, program management, and policy evaluation through work in community, hospital, military, and government settings. Along the way, I realized that while systems and processes are designed to improve quality of life, many don’t always function as intended. And when proposals for new or revised programs are made, they often require evidence and research to guide the best path forward. For me, the most objective and balanced way forward is through the use of data, while also recognizing its limitations and the importance of having people in these spaces who can apply it effectively.\nThrough this education, I aspire to bridge clinical insight with strategic thinking to improve how support services are delivered. My goal is to ensure that programs not only exist, but actually work as intended, and when they don’t, that I have the skills to redesign them in ways that create meaningful, sustainable change."
+  },
+  {
+    "objectID": "about.html#interests",
+    "href": "about.html#interests",
+    "title": "About",
+    "section": "Interests",
+    "text": "Interests\n\nUrban planning and neighborhood development\nSocial determinants of health\nData-driven approaches to improving community outcomes\nGeographic Information Systems (GIS) for spatial analysis"
+  },
+  {
+    "objectID": "about.html#certifications-and-licenses",
+    "href": "about.html#certifications-and-licenses",
+    "title": "About",
+    "section": "Certifications and Licenses",
+    "text": "Certifications and Licenses\n\nLicensed Clinical Social Worker (LCSW-Supervisor) – Texas & Virginia\nProject Management Professional (PMP)\nBoard Certified Diplomate (BCD), Clinical Social Work"
+  },
+  {
+    "objectID": "about.html#contact",
+    "href": "about.html#contact",
+    "title": "About",
+    "section": "Contact",
+    "text": "Contact\nLinkedIn: https://linkedin.com/in/tyerelldotson"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "My name is Tyerell Dotson and I’m a graduate student for UTD’s Social Data Analytics and Research program. This website was created using RStudio Quarto for my Methods of Data Collection and Production course. It is intended to serve as a place to store and share data-related coursework and future professional projects. Perhaps, it will also be useful in the future for collaboration with other professionals with similar interests.\nCheck the navigation bar above to learn more about me, access my resume, or course-related content."
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Below you’ll find a selection of projects and assignments that demonstrate my work with Geographic Information Systems (GIS) software, including ArcGIS Online and ArcGIS Pro. These projects highlight skills in spatial data analysis, visualization, and storytelling with maps. Over time, this page will also feature work from my Methods of Data Collection and Production course, showcasing additional approaches to data gathering, analysis, and presentation."
+  },
+  {
+    "objectID": "projects.html#gis-mapping",
+    "href": "projects.html#gis-mapping",
+    "title": "Projects",
+    "section": "GIS & Mapping",
+    "text": "GIS & Mapping\n\nUS Population Change StoryMap\nA narrative of population change with interactive maps and visuals.\nhttps://arcg.is/1L9Gy80"
+  },
+  {
+    "objectID": "projects.html#methods-data-coming-soon",
+    "href": "projects.html#methods-data-coming-soon",
+    "title": "Projects",
+    "section": "Methods & Data (coming soon)",
+    "text": "Methods & Data (coming soon)"
+  },
+  {
+    "objectID": "assign01.html",
+    "href": "assign01.html",
+    "title": "Assignment 1",
+    "section": "",
+    "text": "Website Design Note\nThis website was created using both RStudio and Quarto. The default theme is “cosmo,” but I elected to use the “brand” theme, not for any functional reason, but simply after trying out a few options I found through a Google search. I landed on this one because I’m hopeful it stands out from other students’ sites while still maintaining professionalism.\nThe navigation bar includes five links that make it easy for visitors to explore the site’s content. The Home page greets visitors with a general introduction. The About section gives more detail about my background and research interests. The Resume link provides direct access to a PDF of my most current resume. Finally, the Projects and Assignments links will mainly include coursework from data-related and GIS classes, starting with this first assignment, a reflection on the design of this website.\nAltogether, this website serves two purposes, to become a portfolio of my coursework and eventually, a foundation to showcase professional projects in the future.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  }
+]
