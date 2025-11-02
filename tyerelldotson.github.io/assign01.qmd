@@ -1,0 +1,13 @@
+---
+title: "Assignment 1"
+---
+
+# Website Design Note
+
+This website was created using both RStudio and Quarto. The default theme is "cosmo," but I elected to use the "brand" theme, not for any functional reason, but simply after trying out a few options I found through a Google search. I landed on this one because I’m hopeful it stands out from other students’ sites while still maintaining professionalism.
+
+The navigation bar includes five links that make it easy for visitors to explore the site’s content. The Home page greets visitors with a general introduction. The About section gives more detail about my background and research interests. The Resume link provides direct access to a PDF of my most current resume. Finally, the Projects and Assignments links will mainly include coursework from data-related and GIS classes, starting with this first assignment, a reflection on the design of this website.
+
+Altogether, this website serves two purposes, to become a portfolio of my coursework and eventually, a foundation to showcase professional projects in the future.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.

@@ -1,0 +1,19 @@
+---
+title: "Projects"
+---
+
+Below you'll find a selection of projects and assignments that demonstrate my work with Geographic Information Systems (GIS) software, including ArcGIS Online and ArcGIS Pro. These projects highlight skills in spatial data analysis, visualization, and storytelling with maps. Over time, this page will also feature work from my Methods of Data Collection and Production course, showcasing additional approaches to data gathering, analysis, and presentation.
+
+## GIS & Mapping
+
+-   **US Population Change StoryMap**\
+    A narrative of population change with interactive maps and visuals.\
+    <https://arcg.is/1L9Gy80>
+
+-   **Healthcare Accessibility in the DFW**
+
+    An interactive web app built with ArcGIS Experience Builder that examines healthcare accessibility in the Dallas–Fort Worth area by visualizing distance to Medicare-registered hospitals alongside median household income and the Social Vulnerability Index as a mediating factor.
+
+    <https://experience.arcgis.com/experience/9f4a7b9e752c455f8873e58818918f3c>
+
+## Methods & Data (coming soon)

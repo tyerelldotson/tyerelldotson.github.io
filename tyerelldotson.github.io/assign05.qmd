@@ -1,0 +1,45 @@
+---
+title: "Assignment 5 - Govt Data"
+---
+
+## Report
+
+This assignment involved scraping data from the GovInfo website. I initially used the rvest package, which worked well for static sites like Wikipedia. However, I learned that rvest cannot interact with dynamic elements or trigger buttons that generate downloadable files. Because the GovInfo site requires exporting search results, this method could not be used to directly scrape the data.
+
+### Process and Difficulties
+
+After reviewing the sample script, I realized the correct process was to export the search results in CSV or JSON format and then use R to download the linked PDFs. The CSV method only downloaded two PDFs, while switching to the JSON file improved the results but still didn’t reach the full number expected. Even after increasing the target from 10 to 20, only 14 files were downloaded.
+
+The main difficulty was that the exported data did not fully match what appeared on the GovInfo website. Although most of the search results on the site showed a visible PDF button, some of those records either lacked a valid pdf link or contained empty fields in the export. This caused the script to skip certain rows or return fewer files than expected.
+
+### Usability of the Data
+
+The exported data was usable as the files that were successfully downloaded all opened correctly as PDFs, showing that the links were valid. However, the exports included missing or invalid fields that limited the total number of successful downloads. The data provided enough structure, titles, dates, for further use, but would require cleanup and verification to ensure complete and accurate results.
+
+### Areas for Improvement
+
+The main area for improvement would be addressing the mismatch between the exported files and the actual search results displayed on the website. Cleaning the data to remove empty or invalid fields, verifying that each record includes a working link, and ensuring the export captures all visible results would improve accuracy. Adding a simple step to validate links before download or log failed attempts would also make the process more reliable and the results more consistent with what users see online.
+
+### Personal Reflection
+
+For me, a personal area of improvement is developing a stronger understanding of how different R packages work. I spent a lot of time trying to use *rvest* because it was familiar, but the results should have been a clear sign that it wasn’t the right tool for this type of site. Once I realized that, the rest of the process, using the JSON export and adjusting the script, came together quickly. Recognizing those limitations earlier would have saved a lot of time and helped me move through the technical challenges more efficiently.
+
+# Downloads
+
+```{r}
+pdf_dir  <- "Data/govinfo_foreign_relations/pdfs"
+all      <- list.files(pdf_dir, pattern="\\.pdf$", full.names=FALSE)
+info <- file.info(file.path(pdf_dir, all))
+ord  <- order(tolower(all))
+files <- head(all[ord], 10)
+paths    <- file.path(pdf_dir, files)
+pretty   <- tools::file_path_sans_ext(files)
+
+tbl <- data.frame(
+  File    = sprintf('<a href="%s">%s</a>', paths, pretty),
+  Size_KB = round(file.info(file.path(pdf_dir, files))$size/1024, 1),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(tbl, escape = FALSE, align = c("l","r"))
+```

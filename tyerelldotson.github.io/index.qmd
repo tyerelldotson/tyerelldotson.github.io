@@ -1,0 +1,9 @@
+---
+title: "Welcome"
+---
+
+My name is Tyerell Dotson and I'm a graduate student for UTD's Social Data Analytics and Research program. This website was created using RStudio Quarto for my Methods of Data Collection and Production course. It is intended to serve as a place to store and share data-related coursework and future professional projects. Perhaps, it will also be useful in the future for collaboration with other professionals with similar interests.
+
+Check the navigation bar above to learn more about me, access my resume, or course-related content.
+
+------------------------------------------------------------------------
