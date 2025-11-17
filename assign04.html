@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – Tyerell Dotson</title>
+<title>Assignment 4 – Tyerell Dotson</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -97,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
@@ -159,9 +194,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#interests" id="toc-interests" class="nav-link active" data-scroll-target="#interests">Interests</a></li>
-  <li><a href="#certifications-and-licenses" id="toc-certifications-and-licenses" class="nav-link" data-scroll-target="#certifications-and-licenses">Certifications and Licenses</a></li>
-  <li><a href="#contact" id="toc-contact" class="nav-link" data-scroll-target="#contact">Contact</a></li>
+  <li><a href="#web-scraping" id="toc-web-scraping" class="nav-link active" data-scroll-target="#web-scraping">Web Scraping</a></li>
+  <li><a href="#data-plan" id="toc-data-plan" class="nav-link" data-scroll-target="#data-plan">Data Plan</a></li>
   </ul>
 </nav>
     </div>
@@ -170,7 +204,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Assignment 4</h1>
 </div>
 
 
@@ -187,29 +221,113 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Though I was born and raised in Virginia, my career in the Air Force eventually brought me to Texas, where I have lived for the past five years while continuing to grow both personally and professionally. I’m currently pursuing a Master’s degree in Social Data Analytics &amp; Research (graduating May 2026) because I believe in the importance of data-driven decision making.</p>
-<p>But how did I find myself at the doorstep of data? Over the last 8+ years, I’ve built experience in behavioral health, program management, and policy evaluation through work in community, hospital, military, and government settings. Along the way, I realized that while systems and processes are designed to improve quality of life, many don’t always function as intended. And when proposals for new or revised programs are made, they often require evidence and research to guide the best path forward. For me, the most objective and balanced way forward is through the use of data, while also recognizing its limitations and the importance of having people in these spaces who can apply it effectively.</p>
-<p>Through this education, I aspire to bridge clinical insight with strategic thinking to improve how support services are delivered. My goal is to ensure that programs not only exist, but actually work as intended, and when they don’t, that I have the skills to redesign them in ways that create meaningful, sustainable change.</p>
-<section id="interests" class="level2">
-<h2 class="anchored" data-anchor-id="interests">Interests</h2>
-<ul>
-<li>Urban planning and neighborhood development</li>
-<li>Social determinants of health</li>
-<li>Data-driven approaches to improving community outcomes</li>
-<li>Geographic Information Systems (GIS) for spatial analysis</li>
-</ul>
+<section id="web-scraping" class="level1">
+<h1>Web Scraping</h1>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>url_fx <span class="ot">&lt;-</span> <span class="st">"https://en.wikipedia.org/wiki/List_of_countries_by_foreign-exchange_reserves"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>fx_raw <span class="ot">&lt;-</span> <span class="fu">read_html</span>(url_fx) <span class="sc">|&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_elements</span>(<span class="st">"table.wikitable"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  (\(x) <span class="fu">html_table</span>(x, <span class="at">fill =</span> <span class="cn">TRUE</span>))() <span class="sc">|&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  (\(x) x[[<span class="dv">1</span>]])()</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>fx <span class="ot">&lt;-</span> fx_raw <span class="sc">|&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">remove_empty</span>(<span class="fu">c</span>(<span class="st">"rows"</span>,<span class="st">"cols"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>to_num <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">as.character</span>(x)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">"[^0-9</span><span class="sc">\\</span><span class="st">-</span><span class="sc">\\</span><span class="st">.]"</span>, <span class="st">""</span>, x)  <span class="co"># strip commas, spaces, footnotes, symbols</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  x[<span class="sc">!</span><span class="fu">grepl</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">d"</span>, x)] <span class="ot">&lt;-</span> <span class="cn">NA</span>         <span class="co"># if no digits at all, set NA</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">suppressWarnings</span>(readr<span class="sc">::</span><span class="fu">parse_number</span>(x))</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>fx_clean <span class="ot">&lt;-</span> fx <span class="sc">|&gt;</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">transmute</span>(</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">country   =</span> country_as_recognized_by_the_u_n,</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">continent =</span> continent,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">reserves_including_gold_musd =</span> <span class="fu">to_num</span>(foreign_exchange_reserves),</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">reserves_excluding_gold_musd =</span> <span class="fu">to_num</span>(foreign_exchange_reserves_3),</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">as_of =</span> <span class="fu">Sys.Date</span>()</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.na</span>(country), country <span class="sc">!=</span> <span class="st">""</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.na</span>(reserves_including_gold_musd) <span class="sc">|</span> <span class="sc">!</span><span class="fu">is.na</span>(reserves_excluding_gold_musd)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">15</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>fx_clean</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 5
+   country    continent reserves_including_g…¹ reserves_excluding_g…² as_of     
+   &lt;chr&gt;      &lt;chr&gt;                      &lt;dbl&gt;                  &lt;dbl&gt; &lt;date&gt;    
+ 1 China      Asia                     3643149                3389306 2025-11-16
+ 2 Japan      Asia                     1324210                1230940 2025-11-16
+ 3 Switzerla… Europe                   1007710                 897295 2025-11-16
+ 4 Russia     Europe/A…                 742400                 434487 2025-11-16
+ 5 India      Asia                      695356                 589820 2025-11-16
+ 6 Taiwan     Asia                      597430                 544300 2025-11-16
+ 7 Saudi Ara… Asia                      434547                 434116 2025-11-16
+ 8 Hong Kong  Asia                      421400                 416216 2025-11-16
+ 9 South Kor… Asia                      415700                 410900 2025-11-16
+10 Brazil     Americas                  388571                 344173 2025-11-16
+11 Singapore  Asia                      383721                 374809 2025-11-16
+12 Germany    Europe                    345338                  91071 2025-11-16
+13 Italy      Europe                    279631                  79064 2025-11-16
+14 France     Europe                    272693                  66641 2025-11-16
+15 United St… Americas                  253767                 242726 2025-11-16
+# ℹ abbreviated names: ¹​reserves_including_gold_musd,
+#   ²​reserves_excluding_gold_musd</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 4
+   country                  production_raw production_carat as_of     
+   &lt;chr&gt;                    &lt;chr&gt;                     &lt;dbl&gt; &lt;date&gt;    
+ 1 Country                  Carats[1]                     1 2025-11-16
+ 2 Russia                   37,322,794             37322794 2025-11-16
+ 3 Botswana                 28,181,710             28181710 2025-11-16
+ 4 Angola                   14,027,003             14027003 2025-11-16
+ 5 Canada                   13,321,628             13321628 2025-11-16
+ 6 DR Congo                 9,788,202               9788202 2025-11-16
+ 7 South Africa             5,340,219               5340219 2025-11-16
+ 8 Zimbabwe                 5,293,329               5293329 2025-11-16
+ 9 Namibia                  2,319,489               2319489 2025-11-16
+10 Lesotho                  695,888                  695888 2025-11-16
+11 Sierra Leone             573,983                  573983 2025-11-16
+12 Tanzania                 373,679                  373679 2025-11-16
+13 Ghana                    332,790                  332790 2025-11-16
+14 Guinea                   113,379                  113379 2025-11-16
+15 Central African Republic 111,377                  111377 2025-11-16</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 3
+   country        exports_usd_thousands as_of     
+   &lt;chr&gt;                          &lt;dbl&gt; &lt;date&gt;    
+ 1 Germany                    129088980 2025-11-16
+ 2 Switzerland                110678748 2025-11-16
+ 3 United States              102488068 2025-11-16
+ 4 Ireland                     89815222 2025-11-16
+ 5 Belgium                     84934569 2025-11-16
+ 6 Italy                       55552143 2025-11-16
+ 7 France                      40322238 2025-11-16
+ 8 Netherlands                 38541479 2025-11-16
+ 9 United Kingdom              29103095 2025-11-16
+10 Slovenia                    27196651 2025-11-16
+11 India                       23427774 2025-11-16
+12 Denmark                     21824168 2025-11-16
+13 Austria                     21211914 2025-11-16
+14 Spain                       18260920 2025-11-16
+15 China                       13702663 2025-11-16</code></pre>
+</div>
+</div>
 </section>
-<section id="certifications-and-licenses" class="level2">
-<h2 class="anchored" data-anchor-id="certifications-and-licenses">Certifications and Licenses</h2>
-<ul>
-<li><p>Licensed Clinical Social Worker (LCSW-Supervisor) – Texas &amp; Virginia</p></li>
-<li><p>Project Management Professional (PMP)</p></li>
-<li><p>Board Certified Diplomate (BCD), Clinical Social Work</p></li>
-</ul>
-</section>
-<section id="contact" class="level2">
-<h2 class="anchored" data-anchor-id="contact">Contact</h2>
-<p>LinkedIn: <a href="https://www.linkedin.com/in/tyerelldotson/">https://linkedin.com/in/tyerelldotson</a></p>
+<section id="data-plan" class="level1">
+<h1>Data Plan</h1>
+<p>If I were to acquire web data for research in the future, I would develop a data plan focused on ensuring accuracy, transparency, and ethical collection practices. This would include identifying reliable and authoritative websites, databases, or APIs that allow access to relevant information. I would also prioritize reproducibility by clearly documenting the data sources, collection methods, and any transformations made during cleaning or analysis. When using web scraping, I would comply with site policies, minimize bias, and verify the data’s validity before incorporating it into the study. The goal would be to gather structured data that supports the research question and can withstand academic scrutiny.</p>
 
 
 </section>

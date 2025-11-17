@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – Tyerell Dotson</title>
+<title>Assignment 2 – Tyerell Dotson</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -97,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
@@ -159,9 +194,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#interests" id="toc-interests" class="nav-link active" data-scroll-target="#interests">Interests</a></li>
-  <li><a href="#certifications-and-licenses" id="toc-certifications-and-licenses" class="nav-link" data-scroll-target="#certifications-and-licenses">Certifications and Licenses</a></li>
-  <li><a href="#contact" id="toc-contact" class="nav-link" data-scroll-target="#contact">Contact</a></li>
+  <li><a href="#google-trends-data" id="toc-google-trends-data" class="nav-link active" data-scroll-target="#google-trends-data">Google Trends Data</a>
+  <ul class="collapse">
+  <li><a href="#comparing-trump-and-kamala-harris" id="toc-comparing-trump-and-kamala-harris" class="nav-link" data-scroll-target="#comparing-trump-and-kamala-harris">Comparing Trump and Kamala Harris</a></li>
+  <li><a href="#how-to-read-the-data" id="toc-how-to-read-the-data" class="nav-link" data-scroll-target="#how-to-read-the-data">How to read the data</a></li>
+  <li><a href="#gtrendsr" id="toc-gtrendsr" class="nav-link" data-scroll-target="#gtrendsr">gtrendsR</a></li>
+  <li><a href="#additional-searches" id="toc-additional-searches" class="nav-link" data-scroll-target="#additional-searches">Additional searches</a></li>
+  <li><a href="#collection-method-differences" id="toc-collection-method-differences" class="nav-link" data-scroll-target="#collection-method-differences">Collection Method Differences</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -170,7 +210,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Assignment 2</h1>
 </div>
 
 
@@ -187,31 +227,140 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Though I was born and raised in Virginia, my career in the Air Force eventually brought me to Texas, where I have lived for the past five years while continuing to grow both personally and professionally. I’m currently pursuing a Master’s degree in Social Data Analytics &amp; Research (graduating May 2026) because I believe in the importance of data-driven decision making.</p>
-<p>But how did I find myself at the doorstep of data? Over the last 8+ years, I’ve built experience in behavioral health, program management, and policy evaluation through work in community, hospital, military, and government settings. Along the way, I realized that while systems and processes are designed to improve quality of life, many don’t always function as intended. And when proposals for new or revised programs are made, they often require evidence and research to guide the best path forward. For me, the most objective and balanced way forward is through the use of data, while also recognizing its limitations and the importance of having people in these spaces who can apply it effectively.</p>
-<p>Through this education, I aspire to bridge clinical insight with strategic thinking to improve how support services are delivered. My goal is to ensure that programs not only exist, but actually work as intended, and when they don’t, that I have the skills to redesign them in ways that create meaningful, sustainable change.</p>
-<section id="interests" class="level2">
-<h2 class="anchored" data-anchor-id="interests">Interests</h2>
-<ul>
-<li>Urban planning and neighborhood development</li>
-<li>Social determinants of health</li>
-<li>Data-driven approaches to improving community outcomes</li>
-<li>Geographic Information Systems (GIS) for spatial analysis</li>
-</ul>
+<section id="google-trends-data" class="level1">
+<h1>Google Trends Data</h1>
+<section id="comparing-trump-and-kamala-harris" class="level2">
+<h2 class="anchored" data-anchor-id="comparing-trump-and-kamala-harris">Comparing Trump and Kamala Harris</h2>
+<p>For this comparison, I picked July 1 – November 30, 2024 because it lines up with the big campaign events that drove public interest. In June, Biden took a lot of criticism about his fitness for office, and in July he stepped down and endorsed Kamala Harris. On the Republican side, Trump accepted the party nomination not long after the alleged assassination attempt. November is significant due to Election Day. Put together, this stretch of time is the most relevant for comparing search interest in Trump and Harris during the 2024 election.</p>
 </section>
-<section id="certifications-and-licenses" class="level2">
-<h2 class="anchored" data-anchor-id="certifications-and-licenses">Certifications and Licenses</h2>
-<ul>
-<li><p>Licensed Clinical Social Worker (LCSW-Supervisor) – Texas &amp; Virginia</p></li>
-<li><p>Project Management Professional (PMP)</p></li>
-<li><p>Board Certified Diplomate (BCD), Clinical Social Work</p></li>
-</ul>
+<section id="how-to-read-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-read-the-data">How to read the data</h2>
+<p>Google Trends provides a readable interface and a CSV for comparisons: a date column and one column per search term with values on a 0–100 scale.</p>
+<p><br>
+The scale equals relative popularity within the selected time &amp; place; 100 is the peak in that window, and other values are scaled to it. Meaning, not raw number of searches but instead, how popular a term is compared to all Google searches during the set time and location. As mentioned, the highest point in the chart is set to 100, and everything else is scaled against that peak. A “50” means the term was half as popular as it was at its peak, not that it had 50 searches. Intervals are automatically chosen by Google Trends based on the date range (hourly, daily, weekly, or monthly). For this search, the intervals are daily.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>web <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Data/trumpvskamalaharris.csv"</span>, <span class="at">skip =</span> <span class="dv">2</span>, <span class="at">check.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(web)[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">"date"</span>; web<span class="sc">$</span>date <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(web<span class="sc">$</span>date)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">ncol</span>(web)) { web[[j]] <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">"&lt;1"</span>,<span class="st">"0.5"</span>, web[[j]])) }</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(web, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         date trump: (United States) kamala harris: (United States)
+1  2024-07-01                      4                            0.5
+2  2024-07-02                      4                            0.5
+3  2024-07-03                      3                            0.5
+4  2024-07-04                      3                            0.5
+5  2024-07-05                      3                            0.5
+6  2024-07-06                      3                            0.5
+7  2024-07-07                      3                            0.5
+8  2024-07-08                      2                            0.5
+9  2024-07-09                      3                            0.5
+10 2024-07-10                      3                            0.5</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">"Preview shown · Full file: %d rows × %d columns</span><span class="sc">\n</span><span class="st">"</span>, <span class="fu">nrow</span>(web), <span class="fu">ncol</span>(web)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Preview shown · Full file: 153 rows × 3 columns</code></pre>
+</div>
+</div>
 </section>
-<section id="contact" class="level2">
-<h2 class="anchored" data-anchor-id="contact">Contact</h2>
-<p>LinkedIn: <a href="https://www.linkedin.com/in/tyerelldotson/">https://linkedin.com/in/tyerelldotson</a></p>
+<section id="gtrendsr" class="level2">
+<h2 class="anchored" data-anchor-id="gtrendsr">gtrendsR</h2>
+<p>Additionally, I pulled the same data directly into RStudio using the <strong>gtrendsR</strong> package and saved it into CSV, R Data, and RDS formats.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtrendsR)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>kw <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Trump"</span>, <span class="st">"Kamala Harris"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>geo <span class="ot">&lt;-</span> <span class="st">"US"</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>window <span class="ot">&lt;-</span> <span class="st">"2024-07-01 2024-11-30"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>gt <span class="ot">&lt;-</span> <span class="fu">gtrends</span>(<span class="at">keyword =</span> kw, <span class="at">geo =</span> geo, <span class="at">time =</span> window, <span class="at">onlyInterest =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(gt<span class="sc">$</span>interest_over_time, <span class="st">"Data/gtrends_trump_harris_2024_iot.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(gt,  <span class="at">file =</span> <span class="st">"Data/gtrends_trump_harris_2024.RData"</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(gt, <span class="at">file =</span> <span class="st">"Data/gtrends_trump_harris_2024.rds"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="additional-searches" class="level2">
+<h2 class="anchored" data-anchor-id="additional-searches">Additional searches</h2>
+<p>I downloaded each search term separately from Google Trends as CSV files and pulled the same data in RStudio with the gtrendsr package, which gave me some extra practice using code to collect and work with data.</p>
+<p>Trump</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>trump <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Data/trump.csv"</span>, <span class="at">skip =</span> <span class="dv">2</span>, <span class="at">check.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(trump)[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">"date"</span>; trump<span class="sc">$</span>date <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(trump<span class="sc">$</span>date)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">ncol</span>(trump)) { trump[[j]] <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">"&lt;1"</span>,<span class="st">"0.5"</span>, trump[[j]])) }</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(trump, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         date trump: (United States)
+1  2024-07-01                      4
+2  2024-07-02                      4
+3  2024-07-03                      3
+4  2024-07-04                      3
+5  2024-07-05                      3
+6  2024-07-06                      3
+7  2024-07-07                      3
+8  2024-07-08                      2
+9  2024-07-09                      3
+10 2024-07-10                      3</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">"Preview shown · Full file: %d rows × %d columns</span><span class="sc">\n</span><span class="st">"</span>, <span class="fu">nrow</span>(trump), <span class="fu">ncol</span>(trump)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Preview shown · Full file: 153 rows × 2 columns</code></pre>
+</div>
+</div>
+<p>Kamala Harris</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>kamala <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Data/kamalaharris.csv"</span>, <span class="at">skip =</span> <span class="dv">2</span>, <span class="at">check.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(kamala)[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">"date"</span>; kamala<span class="sc">$</span>date <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(kamala<span class="sc">$</span>date)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">ncol</span>(kamala)) { kamala[[j]] <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">"&lt;1"</span>,<span class="st">"0.5"</span>, kamala[[j]])) }</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(kamala, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         date kamala harris: (United States)
+1  2024-07-01                              1
+2  2024-07-02                              1
+3  2024-07-03                              2
+4  2024-07-04                              2
+5  2024-07-05                              2
+6  2024-07-06                              1
+7  2024-07-07                              1
+8  2024-07-08                              1
+9  2024-07-09                              1
+10 2024-07-10                              1</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">"Preview shown · Full file: %d rows × %d columns</span><span class="sc">\n</span><span class="st">"</span>, <span class="fu">nrow</span>(kamala), <span class="fu">ncol</span>(kamala)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Preview shown · Full file: 153 rows × 2 columns</code></pre>
+</div>
+</div>
+<p>Election</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>election <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Data/election.csv"</span>, <span class="at">skip =</span> <span class="dv">2</span>, <span class="at">check.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(election)[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">"date"</span>; election<span class="sc">$</span>date <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(election<span class="sc">$</span>date)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">ncol</span>(election)) { election[[j]] <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">"&lt;1"</span>,<span class="st">"0.5"</span>, election[[j]])) }</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(election, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         date election: (United States)
+1  2024-07-01                       0.5
+2  2024-07-02                       0.5
+3  2024-07-03                       0.5
+4  2024-07-04                       0.5
+5  2024-07-05                       0.5
+6  2024-07-06                       0.5
+7  2024-07-07                       0.5
+8  2024-07-08                       0.5
+9  2024-07-09                       0.5
+10 2024-07-10                       0.5</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">"Preview shown · Full file: %d rows × %d columns</span><span class="sc">\n</span><span class="st">"</span>, <span class="fu">nrow</span>(election), <span class="fu">ncol</span>(election)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Preview shown · Full file: 153 rows × 2 columns</code></pre>
+</div>
+</div>
+</section>
+<section id="collection-method-differences" class="level2">
+<h2 class="anchored" data-anchor-id="collection-method-differences">Collection Method Differences</h2>
+<p>I used both the Google Trends website and the gtrendsR package to collect data. Both methods provide the same output but there is some differences in terms of simplicity. Downloading CSVs from the website was straightforward and gave me quick access to the search results. Using gtrendsR took a little more effort since it required writing code, something I am just now learning how to do, but once the data was pulled into RStudio I could immediately save it in multiple formats and start analyzing it in the same environment. In other words, the website method is quick and user-friendly, while the RStudio method is more efficient because you’re able to do different things with it from the same application as opposed to pulling it from Google trends and then uploading somewhere else to use the data. Though the outcome is the same, the gtrendsR package adds flexibility once you’re comfortable with the code.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

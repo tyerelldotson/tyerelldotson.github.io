@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – Tyerell Dotson</title>
+<title>Assignment 6 - Text Analytics – Tyerell Dotson</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -97,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
@@ -159,9 +159,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#interests" id="toc-interests" class="nav-link active" data-scroll-target="#interests">Interests</a></li>
-  <li><a href="#certifications-and-licenses" id="toc-certifications-and-licenses" class="nav-link" data-scroll-target="#certifications-and-licenses">Certifications and Licenses</a></li>
-  <li><a href="#contact" id="toc-contact" class="nav-link" data-scroll-target="#contact">Contact</a></li>
+  <li><a href="#understanding-the-word-clouds" id="toc-understanding-the-word-clouds" class="nav-link active" data-scroll-target="#understanding-the-word-clouds">Understanding the Word Clouds</a></li>
+  <li><a href="#similarities-and-differences-over-time-and-among-presidents" id="toc-similarities-and-differences-over-time-and-among-presidents" class="nav-link" data-scroll-target="#similarities-and-differences-over-time-and-among-presidents">Similarities and Differences Over Time and Among Presidents</a></li>
+  <li><a href="#what-is-wordfish" id="toc-what-is-wordfish" class="nav-link" data-scroll-target="#what-is-wordfish">What is Wordfish?</a></li>
   </ul>
 </nav>
     </div>
@@ -170,7 +170,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Assignment 6 - Text Analytics</h1>
 </div>
 
 
@@ -187,29 +187,454 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Though I was born and raised in Virginia, my career in the Air Force eventually brought me to Texas, where I have lived for the past five years while continuing to grow both personally and professionally. I’m currently pursuing a Master’s degree in Social Data Analytics &amp; Research (graduating May 2026) because I believe in the importance of data-driven decision making.</p>
-<p>But how did I find myself at the doorstep of data? Over the last 8+ years, I’ve built experience in behavioral health, program management, and policy evaluation through work in community, hospital, military, and government settings. Along the way, I realized that while systems and processes are designed to improve quality of life, many don’t always function as intended. And when proposals for new or revised programs are made, they often require evidence and research to guide the best path forward. For me, the most objective and balanced way forward is through the use of data, while also recognizing its limitations and the importance of having people in these spaces who can apply it effectively.</p>
-<p>Through this education, I aspire to bridge clinical insight with strategic thinking to improve how support services are delivered. My goal is to ensure that programs not only exist, but actually work as intended, and when they don’t, that I have the skills to redesign them in ways that create meaningful, sustainable change.</p>
-<section id="interests" class="level2">
-<h2 class="anchored" data-anchor-id="interests">Interests</h2>
-<ul>
-<li>Urban planning and neighborhood development</li>
-<li>Social determinants of health</li>
-<li>Data-driven approaches to improving community outcomes</li>
-<li>Geographic Information Systems (GIS) for spatial analysis</li>
-</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assign06_files/figure-html/run-scripts-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assign06_files/figure-html/run-scripts-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assign06_files/figure-html/run-scripts-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="understanding-the-word-clouds" class="level3">
+<h3 class="anchored" data-anchor-id="understanding-the-word-clouds">Understanding the Word Clouds</h3>
+<p>The word clouds show the most frequent and distinctive words used in U.S. presidential inaugural speeches. Each cloud represents either an individual president or a broader time period. The larger the word, the more often it appears or the more unique it is to that speaker’s language.</p>
+<p>In this case, you can see patterns in tone and focus. For example, words like “freedom” and “us” stand out in Obama’s speeches, while “America” and “great” stand out in Trump’s. Word clouds are great illustrations of how language and priorities shift over time.</p>
+<p>(These visuals are generated using the textplot_wordcloud() function from the quanteda.textplots package.)</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Top distinguishing terms in Post-2000 speeches</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">feature</th>
+<th style="text-align: right;">chi2</th>
+<th style="text-align: right;">p</th>
+<th style="text-align: right;">n_target</th>
+<th style="text-align: right;">n_reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">america</td>
+<td style="text-align: right;">427.86752</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">107</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">american</td>
+<td style="text-align: right;">178.46836</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">87</td>
+<td style="text-align: right;">57</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">today</td>
+<td style="text-align: right;">170.39575</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">thank</td>
+<td style="text-align: right;">144.09955</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">freedom</td>
+<td style="text-align: right;">85.89124</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">34</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">stori</td>
+<td style="text-align: right;">81.93645</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">know</td>
+<td style="text-align: right;">72.67507</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">18</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">day</td>
+<td style="text-align: right;">71.87235</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">37</td>
+<td style="text-align: right;">26</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ideal</td>
+<td style="text-align: right;">65.83894</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">togeth</td>
+<td style="text-align: right;">65.37976</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">11</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Top distinguishing terms in Pre-1900 speeches</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">feature</th>
+<th style="text-align: right;">chi2</th>
+<th style="text-align: right;">p</th>
+<th style="text-align: right;">n_target</th>
+<th style="text-align: right;">n_reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">us</td>
+<td style="text-align: right;">69.29860</td>
+<td style="text-align: right;">0.0e+00</td>
+<td style="text-align: right;">89</td>
+<td style="text-align: right;">140</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">world</td>
+<td style="text-align: right;">57.95143</td>
+<td style="text-align: right;">0.0e+00</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">51</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">new</td>
+<td style="text-align: right;">46.72204</td>
+<td style="text-align: right;">0.0e+00</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">43</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">presid</td>
+<td style="text-align: right;">28.60372</td>
+<td style="text-align: right;">1.0e-07</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">46</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">histori</td>
+<td style="text-align: right;">27.43379</td>
+<td style="text-align: right;">2.0e-07</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">31</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">come</td>
+<td style="text-align: right;">25.39269</td>
+<td style="text-align: right;">5.0e-07</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">stand</td>
+<td style="text-align: right;">23.08508</td>
+<td style="text-align: right;">1.5e-06</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">26</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">nation</td>
+<td style="text-align: right;">22.08858</td>
+<td style="text-align: right;">2.6e-06</td>
+<td style="text-align: right;">103</td>
+<td style="text-align: right;">278</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">end</td>
+<td style="text-align: right;">21.49257</td>
+<td style="text-align: right;">3.6e-06</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">23</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">promis</td>
+<td style="text-align: right;">21.12440</td>
+<td style="text-align: right;">4.3e-06</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">17</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Top distinguishing terms in Democratic speeches</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">feature</th>
+<th style="text-align: right;">chi2</th>
+<th style="text-align: right;">p</th>
+<th style="text-align: right;">n_target</th>
+<th style="text-align: right;">n_reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">democraci</td>
+<td style="text-align: right;">36.33525</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fellow</td>
+<td style="text-align: right;">20.13701</td>
+<td style="text-align: right;">0.0000072</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">28</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">us</td>
+<td style="text-align: right;">19.99811</td>
+<td style="text-align: right;">0.0000078</td>
+<td style="text-align: right;">222</td>
+<td style="text-align: right;">220</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">power</td>
+<td style="text-align: right;">18.19461</td>
+<td style="text-align: right;">0.0000199</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">103</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">spirit</td>
+<td style="text-align: right;">17.80914</td>
+<td style="text-align: right;">0.0000244</td>
+<td style="text-align: right;">61</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sacr</td>
+<td style="text-align: right;">15.25608</td>
+<td style="text-align: right;">0.0000939</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">endur</td>
+<td style="text-align: right;">14.56338</td>
+<td style="text-align: right;">0.0001355</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">humbl</td>
+<td style="text-align: right;">13.45008</td>
+<td style="text-align: right;">0.0002450</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">happi</td>
+<td style="text-align: right;">11.45457</td>
+<td style="text-align: right;">0.0007132</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ancient</td>
+<td style="text-align: right;">11.43971</td>
+<td style="text-align: right;">0.0007189</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Top distinguishing terms in Republican speeches</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">feature</th>
+<th style="text-align: right;">chi2</th>
+<th style="text-align: right;">p</th>
+<th style="text-align: right;">n_target</th>
+<th style="text-align: right;">n_reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">everi</td>
+<td style="text-align: right;">6.952140</td>
+<td style="text-align: right;">0.0083719</td>
+<td style="text-align: right;">109</td>
+<td style="text-align: right;">116</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">life</td>
+<td style="text-align: right;">5.048050</td>
+<td style="text-align: right;">0.0246537</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">64</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">new</td>
+<td style="text-align: right;">4.741566</td>
+<td style="text-align: right;">0.0294423</td>
+<td style="text-align: right;">113</td>
+<td style="text-align: right;">129</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">shall</td>
+<td style="text-align: right;">3.884095</td>
+<td style="text-align: right;">0.0487455</td>
+<td style="text-align: right;">111</td>
+<td style="text-align: right;">130</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">principl</td>
+<td style="text-align: right;">3.524817</td>
+<td style="text-align: right;">0.0604565</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: right;">41</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">thing</td>
+<td style="text-align: right;">3.438710</td>
+<td style="text-align: right;">0.0636854</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">today</td>
+<td style="text-align: right;">3.300585</td>
+<td style="text-align: right;">0.0692552</td>
+<td style="text-align: right;">58</td>
+<td style="text-align: right;">63</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">nation</td>
+<td style="text-align: right;">3.156100</td>
+<td style="text-align: right;">0.0756437</td>
+<td style="text-align: right;">252</td>
+<td style="text-align: right;">328</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">chang</td>
+<td style="text-align: right;">3.080150</td>
+<td style="text-align: right;">0.0792532</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">51</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">confid</td>
+<td style="text-align: right;">2.899366</td>
+<td style="text-align: right;">0.0886144</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">39</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>KWIC examples from early inaugural speeches (Washington 1789)</caption>
+<colgroup>
+<col style="width: 17%">
+<col style="width: 10%">
+<col style="width: 37%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">docname</th>
+<th style="text-align: left;">keyword</th>
+<th style="text-align: left;">pre</th>
+<th style="text-align: left;">post</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1789-Washington</td>
+<td style="text-align: left;">liberties</td>
+<td style="text-align: left;">benediction may consecrate to the</td>
+<td style="text-align: left;">and happiness of the people</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1789-Washington</td>
+<td style="text-align: left;">economy</td>
+<td style="text-align: left;">that there exists in the</td>
+<td style="text-align: left;">and course of nature an</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1789-Washington</td>
+<td style="text-align: left;">union</td>
+<td style="text-align: left;">course of nature an indissoluble</td>
+<td style="text-align: left;">between virtue and happiness ;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1789-Washington</td>
+<td style="text-align: left;">liberties</td>
+<td style="text-align: left;">an arduous struggle for its</td>
+<td style="text-align: left;">, the light in which</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1789-Washington</td>
+<td style="text-align: left;">security</td>
+<td style="text-align: left;">form of government for the</td>
+<td style="text-align: left;">of their union and the</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1789-Washington</td>
+<td style="text-align: left;">union</td>
+<td style="text-align: left;">for the security of their</td>
+<td style="text-align: left;">and the advancement of their</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </section>
-<section id="certifications-and-licenses" class="level2">
-<h2 class="anchored" data-anchor-id="certifications-and-licenses">Certifications and Licenses</h2>
-<ul>
-<li><p>Licensed Clinical Social Worker (LCSW-Supervisor) – Texas &amp; Virginia</p></li>
-<li><p>Project Management Professional (PMP)</p></li>
-<li><p>Board Certified Diplomate (BCD), Clinical Social Work</p></li>
-</ul>
+<section id="similarities-and-differences-over-time-and-among-presidents" class="level3">
+<h3 class="anchored" data-anchor-id="similarities-and-differences-over-time-and-among-presidents">Similarities and Differences Over Time and Among Presidents</h3>
+<p><strong>Over time:</strong><br>
+Early inaugural speeches (pre-1900) were grounded in the nation’s founding ideals and moral principles. The KWIC lines from Washington’s 1789 address highlight words like&nbsp;liberties,&nbsp;union, and&nbsp;economy, tied to&nbsp;virtue&nbsp;and&nbsp;happiness. The overall tone centered on morality, stability, and natural order.</p>
+<p>Post-2000 speeches, on the other hand, are filled with words like&nbsp;America,&nbsp;American, and&nbsp;today, pointing to a shift toward modern identity, global presence, and immediate political priorities. In short, presidential rhetoric moved from timeless ideals to a focus on action, identity, and leadership.</p>
+<p><strong>Among presidents and parties:</strong><br>
+Democratic speeches often include words such as&nbsp;democraci,&nbsp;fellow, and&nbsp;us, showing a consistent emphasis on unity, inclusion, and collective progress.</p>
+<p>Republican speeches, meanwhile, highlight terms like&nbsp;everi,&nbsp;life,&nbsp;principl,&nbsp;nation, and confidm; language that leans more on individual resolve, moral conviction, and national strength.</p>
+<p>Both parties talk about progress and change, but their tones differ: Democrats tend to focus on shared purpose and optimism, while Republicans emphasize perseverance and foundational principles.</p>
+<p><strong>Overall:</strong><br>
+Across time and political lines, every president appeals to unity and national purpose. What changes is the lens, from liberty and virtue in the early years to modern themes of leadership and resilience today. The tone also shifts by party: Democrats are more collective and aspirational, while Republicans are more principled and motivational.</p>
+<p><u>Note:</u>&nbsp;Words in the analysis appear in stemmed form (e.g.,&nbsp;<em>democraci</em>&nbsp;for “democracy/democratic,”&nbsp;<em>confid</em>&nbsp;for “confidence,”&nbsp;<em>everi</em>&nbsp;for “every”). Stemming helps group related word forms together but may slightly reduce readability.</p>
 </section>
-<section id="contact" class="level2">
-<h2 class="anchored" data-anchor-id="contact">Contact</h2>
-<p>LinkedIn: <a href="https://www.linkedin.com/in/tyerelldotson/">https://linkedin.com/in/tyerelldotson</a></p>
+<section id="what-is-wordfish" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-wordfish">What is Wordfish?</h3>
+<p>From the Quanteda website, not much detail is given about what Wordfish actually is. To get a better grasp, I looked outside of Quanteda and found that Wordfish is a model that estimates where documents fall along a scale, like political leaning or tone, based on the words they use. It looks at how often certain words appear in each text and uses that to position them relative to one another. In short, it helps identify patterns or bias in language across different documents.</p>
 
 
 </section>

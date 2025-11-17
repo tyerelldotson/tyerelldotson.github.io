@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – Tyerell Dotson</title>
+<title>Assignment 5 - Govt Data – Tyerell Dotson</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -97,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
@@ -159,9 +194,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#interests" id="toc-interests" class="nav-link active" data-scroll-target="#interests">Interests</a></li>
-  <li><a href="#certifications-and-licenses" id="toc-certifications-and-licenses" class="nav-link" data-scroll-target="#certifications-and-licenses">Certifications and Licenses</a></li>
-  <li><a href="#contact" id="toc-contact" class="nav-link" data-scroll-target="#contact">Contact</a></li>
+  <li><a href="#report" id="toc-report" class="nav-link active" data-scroll-target="#report">Report</a>
+  <ul class="collapse">
+  <li><a href="#process-and-difficulties" id="toc-process-and-difficulties" class="nav-link" data-scroll-target="#process-and-difficulties">Process and Difficulties</a></li>
+  <li><a href="#usability-of-the-data" id="toc-usability-of-the-data" class="nav-link" data-scroll-target="#usability-of-the-data">Usability of the Data</a></li>
+  <li><a href="#areas-for-improvement" id="toc-areas-for-improvement" class="nav-link" data-scroll-target="#areas-for-improvement">Areas for Improvement</a></li>
+  <li><a href="#personal-reflection" id="toc-personal-reflection" class="nav-link" data-scroll-target="#personal-reflection">Personal Reflection</a></li>
+  </ul></li>
+  <li><a href="#downloads" id="toc-downloads" class="nav-link" data-scroll-target="#downloads">Downloads</a></li>
   </ul>
 </nav>
     </div>
@@ -170,7 +210,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Assignment 5 - Govt Data</h1>
 </div>
 
 
@@ -187,29 +227,102 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Though I was born and raised in Virginia, my career in the Air Force eventually brought me to Texas, where I have lived for the past five years while continuing to grow both personally and professionally. I’m currently pursuing a Master’s degree in Social Data Analytics &amp; Research (graduating May 2026) because I believe in the importance of data-driven decision making.</p>
-<p>But how did I find myself at the doorstep of data? Over the last 8+ years, I’ve built experience in behavioral health, program management, and policy evaluation through work in community, hospital, military, and government settings. Along the way, I realized that while systems and processes are designed to improve quality of life, many don’t always function as intended. And when proposals for new or revised programs are made, they often require evidence and research to guide the best path forward. For me, the most objective and balanced way forward is through the use of data, while also recognizing its limitations and the importance of having people in these spaces who can apply it effectively.</p>
-<p>Through this education, I aspire to bridge clinical insight with strategic thinking to improve how support services are delivered. My goal is to ensure that programs not only exist, but actually work as intended, and when they don’t, that I have the skills to redesign them in ways that create meaningful, sustainable change.</p>
-<section id="interests" class="level2">
-<h2 class="anchored" data-anchor-id="interests">Interests</h2>
-<ul>
-<li>Urban planning and neighborhood development</li>
-<li>Social determinants of health</li>
-<li>Data-driven approaches to improving community outcomes</li>
-<li>Geographic Information Systems (GIS) for spatial analysis</li>
-</ul>
+<section id="report" class="level2">
+<h2 class="anchored" data-anchor-id="report">Report</h2>
+<p>This assignment involved scraping data from the GovInfo website. I initially used the rvest package, which worked well for static sites like Wikipedia. However, I learned that rvest cannot interact with dynamic elements or trigger buttons that generate downloadable files. Because the GovInfo site requires exporting search results, this method could not be used to directly scrape the data.</p>
+<section id="process-and-difficulties" class="level3">
+<h3 class="anchored" data-anchor-id="process-and-difficulties">Process and Difficulties</h3>
+<p>After reviewing the sample script, I realized the correct process was to export the search results in CSV or JSON format and then use R to download the linked PDFs. The CSV method only downloaded two PDFs, while switching to the JSON file improved the results but still didn’t reach the full number expected. Even after increasing the target from 10 to 20, only 14 files were downloaded.</p>
+<p>The main difficulty was that the exported data did not fully match what appeared on the GovInfo website. Although most of the search results on the site showed a visible PDF button, some of those records either lacked a valid pdf link or contained empty fields in the export. This caused the script to skip certain rows or return fewer files than expected.</p>
 </section>
-<section id="certifications-and-licenses" class="level2">
-<h2 class="anchored" data-anchor-id="certifications-and-licenses">Certifications and Licenses</h2>
-<ul>
-<li><p>Licensed Clinical Social Worker (LCSW-Supervisor) – Texas &amp; Virginia</p></li>
-<li><p>Project Management Professional (PMP)</p></li>
-<li><p>Board Certified Diplomate (BCD), Clinical Social Work</p></li>
-</ul>
+<section id="usability-of-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="usability-of-the-data">Usability of the Data</h3>
+<p>The exported data was usable as the files that were successfully downloaded all opened correctly as PDFs, showing that the links were valid. However, the exports included missing or invalid fields that limited the total number of successful downloads. The data provided enough structure, titles, dates, for further use, but would require cleanup and verification to ensure complete and accurate results.</p>
 </section>
-<section id="contact" class="level2">
-<h2 class="anchored" data-anchor-id="contact">Contact</h2>
-<p>LinkedIn: <a href="https://www.linkedin.com/in/tyerelldotson/">https://linkedin.com/in/tyerelldotson</a></p>
+<section id="areas-for-improvement" class="level3">
+<h3 class="anchored" data-anchor-id="areas-for-improvement">Areas for Improvement</h3>
+<p>The main area for improvement would be addressing the mismatch between the exported files and the actual search results displayed on the website. Cleaning the data to remove empty or invalid fields, verifying that each record includes a working link, and ensuring the export captures all visible results would improve accuracy. Adding a simple step to validate links before download or log failed attempts would also make the process more reliable and the results more consistent with what users see online.</p>
+</section>
+<section id="personal-reflection" class="level3">
+<h3 class="anchored" data-anchor-id="personal-reflection">Personal Reflection</h3>
+<p>For me, a personal area of improvement is developing a stronger understanding of how different R packages work. I spent a lot of time trying to use&nbsp;<em>rvest</em>&nbsp;because it was familiar, but the results should have been a clear sign that it wasn’t the right tool for this type of site. Once I realized that, the rest of the process, using the JSON export and adjusting the script, came together quickly. Recognizing those limitations earlier would have saved a lot of time and helped me move through the technical challenges more efficiently.</p>
+</section>
+</section>
+<section id="downloads" class="level1">
+<h1>Downloads</h1>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pdf_dir  <span class="ot">&lt;-</span> <span class="st">"Data/govinfo_foreign_relations/pdfs"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>all      <span class="ot">&lt;-</span> <span class="fu">list.files</span>(pdf_dir, <span class="at">pattern=</span><span class="st">"</span><span class="sc">\\</span><span class="st">.pdf$"</span>, <span class="at">full.names=</span><span class="cn">FALSE</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>info <span class="ot">&lt;-</span> <span class="fu">file.info</span>(<span class="fu">file.path</span>(pdf_dir, all))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>ord  <span class="ot">&lt;-</span> <span class="fu">order</span>(<span class="fu">tolower</span>(all))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>files <span class="ot">&lt;-</span> <span class="fu">head</span>(all[ord], <span class="dv">10</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>paths    <span class="ot">&lt;-</span> <span class="fu">file.path</span>(pdf_dir, files)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>pretty   <span class="ot">&lt;-</span> tools<span class="sc">::</span><span class="fu">file_path_sans_ext</span>(files)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">File    =</span> <span class="fu">sprintf</span>(<span class="st">'&lt;a href="%s"&gt;%s&lt;/a&gt;'</span>, paths, pretty),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Size_KB =</span> <span class="fu">round</span>(<span class="fu">file.info</span>(<span class="fu">file.path</span>(pdf_dir, files))<span class="sc">$</span>size<span class="sc">/</span><span class="dv">1024</span>, <span class="dv">1</span>),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(tbl, <span class="at">escape =</span> <span class="cn">FALSE</span>, <span class="at">align =</span> <span class="fu">c</span>(<span class="st">"l"</span>,<span class="st">"r"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 94%">
+<col style="width: 5%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">File</th>
+<th style="text-align: right;">Size_KB</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a href="Data/govinfo_foreign_relations/pdfs/01_CPRT-119SPRT58575.pdf.pdf">01_CPRT-119SPRT58575.pdf</a></td>
+<td style="text-align: right;">240.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="Data/govinfo_foreign_relations/pdfs/02_BILLS-119sres229ats.pdf.pdf">02_BILLS-119sres229ats.pdf</a></td>
+<td style="text-align: right;">219.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="Data/govinfo_foreign_relations/pdfs/03_CREC-2025-06-02-pt1-PgS3162-2.pdf.pdf">03_CREC-2025-06-02-pt1-PgS3162-2.pdf</a></td>
+<td style="text-align: right;">258.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="Data/govinfo_foreign_relations/pdfs/govfiles_BILLS-119sjres90is.pdf">govfiles_BILLS-119sjres90is</a></td>
+<td style="text-align: right;">240.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="Data/govinfo_foreign_relations/pdfs/govfiles_CCAL-119hcal-2025-10-10.pdf">govfiles_CCAL-119hcal-2025-10-10</a></td>
+<td style="text-align: right;">244.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="Data/govinfo_foreign_relations/pdfs/govfiles_CCAL-119hcal-2025-10-14.pdf">govfiles_CCAL-119hcal-2025-10-14</a></td>
+<td style="text-align: right;">244.7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="Data/govinfo_foreign_relations/pdfs/govfiles_CCAL-119hcal-2025-10-17.pdf">govfiles_CCAL-119hcal-2025-10-17</a></td>
+<td style="text-align: right;">186.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="Data/govinfo_foreign_relations/pdfs/govfiles_CCAL-119hcal-2025-10-21.pdf">govfiles_CCAL-119hcal-2025-10-21</a></td>
+<td style="text-align: right;">203.9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="Data/govinfo_foreign_relations/pdfs/govfiles_CCAL-119scal-2025-10-10.pdf">govfiles_CCAL-119scal-2025-10-10</a></td>
+<td style="text-align: right;">167.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="Data/govinfo_foreign_relations/pdfs/govfiles_CCAL-119scal-2025-10-15.pdf">govfiles_CCAL-119scal-2025-10-15</a></td>
+<td style="text-align: right;">167.8</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
 
 </section>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – Tyerell Dotson</title>
+<title>Assignment 3 – Tyerell Dotson</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -97,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
@@ -159,9 +194,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#interests" id="toc-interests" class="nav-link active" data-scroll-target="#interests">Interests</a></li>
-  <li><a href="#certifications-and-licenses" id="toc-certifications-and-licenses" class="nav-link" data-scroll-target="#certifications-and-licenses">Certifications and Licenses</a></li>
-  <li><a href="#contact" id="toc-contact" class="nav-link" data-scroll-target="#contact">Contact</a></li>
+  <li><a href="#mapping-census-data" id="toc-mapping-census-data" class="nav-link active" data-scroll-target="#mapping-census-data">Mapping Census Data</a>
+  <ul class="collapse">
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -170,7 +206,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Assignment 3</h1>
 </div>
 
 
@@ -187,31 +223,83 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Though I was born and raised in Virginia, my career in the Air Force eventually brought me to Texas, where I have lived for the past five years while continuing to grow both personally and professionally. I’m currently pursuing a Master’s degree in Social Data Analytics &amp; Research (graduating May 2026) because I believe in the importance of data-driven decision making.</p>
-<p>But how did I find myself at the doorstep of data? Over the last 8+ years, I’ve built experience in behavioral health, program management, and policy evaluation through work in community, hospital, military, and government settings. Along the way, I realized that while systems and processes are designed to improve quality of life, many don’t always function as intended. And when proposals for new or revised programs are made, they often require evidence and research to guide the best path forward. For me, the most objective and balanced way forward is through the use of data, while also recognizing its limitations and the importance of having people in these spaces who can apply it effectively.</p>
-<p>Through this education, I aspire to bridge clinical insight with strategic thinking to improve how support services are delivered. My goal is to ensure that programs not only exist, but actually work as intended, and when they don’t, that I have the skills to redesign them in ways that create meaningful, sustainable change.</p>
-<section id="interests" class="level2">
-<h2 class="anchored" data-anchor-id="interests">Interests</h2>
-<ul>
-<li>Urban planning and neighborhood development</li>
-<li>Social determinants of health</li>
-<li>Data-driven approaches to improving community outcomes</li>
-<li>Geographic Information Systems (GIS) for spatial analysis</li>
-</ul>
-</section>
-<section id="certifications-and-licenses" class="level2">
-<h2 class="anchored" data-anchor-id="certifications-and-licenses">Certifications and Licenses</h2>
-<ul>
-<li><p>Licensed Clinical Social Worker (LCSW-Supervisor) – Texas &amp; Virginia</p></li>
-<li><p>Project Management Professional (PMP)</p></li>
-<li><p>Board Certified Diplomate (BCD), Clinical Social Work</p></li>
-</ul>
-</section>
-<section id="contact" class="level2">
-<h2 class="anchored" data-anchor-id="contact">Contact</h2>
-<p>LinkedIn: <a href="https://www.linkedin.com/in/tyerelldotson/">https://linkedin.com/in/tyerelldotson</a></p>
+<section id="mapping-census-data" class="level1">
+<h1>Mapping Census Data</h1>
+<p>For this assignment, I used the tidycensus package to pull 2023 ACS 5-year data at the county level in Texas. The goal was to create one map and one table that highlight different socioeconomic variables, followed by a brief interpretation of the results. I chose to examine the relationship between home value and commute time. My hypothesis was that those that commute less than 10 minutes will have a positive relationship with home values between $500-$749k.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>vars <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">mort_500_749 =</span> <span class="st">"B25096_009"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">mort_total   =</span> <span class="st">"B25096_001"</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">drive_u10    =</span> <span class="st">"B08534_022"</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">drive_total  =</span> <span class="st">"B08534_001"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>tx <span class="ot">&lt;-</span> <span class="fu">get_acs</span>(</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">geography =</span> <span class="st">"county"</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">state =</span> <span class="st">"TX"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">variables =</span> vars,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">year =</span> <span class="dv">2023</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">survey =</span> <span class="st">"acs5"</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">geometry =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>tx_wide <span class="ot">&lt;-</span> tx <span class="sc">|&gt;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(GEOID, NAME, variable, estimate, moe, geometry) <span class="sc">|&gt;</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> variable, <span class="at">values_from =</span> <span class="fu">c</span>(estimate, moe)) <span class="sc">|&gt;</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">pct_mort_500_749 =</span> <span class="fu">ifelse</span>(estimate_mort_total <span class="sc">&gt;</span> <span class="dv">0</span>,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>                              <span class="dv">100</span> <span class="sc">*</span> estimate_mort_500_749 <span class="sc">/</span> estimate_mort_total, <span class="cn">NA_real_</span>),</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">pct_drive_u10    =</span> <span class="fu">ifelse</span>(estimate_drive_total <span class="sc">&gt;</span> <span class="dv">0</span>,</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>                              <span class="dv">100</span> <span class="sc">*</span> estimate_drive_u10    <span class="sc">/</span> estimate_drive_total, <span class="cn">NA_real_</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assign03_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 5
+   county           estimate_drive_u10 moe_drive_u10 total_workers pct_drive_u10
+   &lt;chr&gt;                         &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;
+ 1 Collingsworth C…                608           162          1045          58.2
+ 2 Baylor County                   707           167          1261          56.1
+ 3 Presidio County                1301           325          2483          52.4
+ 4 Lamb County                    1862           271          3985          46.7
+ 5 Pecos County                   2691           332          5818          46.3
+ 6 Culberson County                622           218          1346          46.2
+ 7 Floyd County                    783           153          1732          45.2
+ 8 McCulloch County               1093           231          2423          45.1
+ 9 Hansford County                1015           175          2283          44.5
+10 Coke County                     348           111           789          44.1</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 5
+   county           estimate_drive_u10 moe_drive_u10 total_workers pct_drive_u10
+   &lt;chr&gt;                         &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;
+ 1 Fort Bend County              15195          1364        200931           7.6
+ 2 Montgomery Coun…              15773          1389        217492           7.3
+ 3 El Paso County                25342          1484        347154           7.3
+ 4 Collin County                 30109          1729        420218           7.2
+ 5 Waller County                  1634           485         23928           6.8
+ 6 Tarrant County                59866          2200        942163           6.4
+ 7 Bexar County                  53908          2156        882863           6.1
+ 8 Travis County                 36738          2053        683588           5.4
+ 9 Dallas County                 72789          2500       1424038           5.1
+10 Harris County                111735          4027       2289694           4.9</code></pre>
+</div>
+</div>
+<section id="interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation">Interpretation</h2>
+<p>The map shows the share of owner-occupied homes in Texas valued between $500,000 and $749,999. The lighter shades represent counties where this price range makes up a higher percentage of the housing stock. Notably, the San Antonio–Austin corridor (e.g., Bexar, Comal, Travis, Williamson) stands out more than Houston, indicating these counties have a relatively larger proportion of homes in this band.</p>
+<p>The table complements the map by listing the counties with the highest and lowest proportions of short commute times (less than 10 minutes). Some counties have missing values because the sample sizes for those estimates were too small, but the table still highlights where short commutes are most and least common.</p>
+<p>When comparing these patterns, we can see that many of the counties with a higher share of $500k–$749k homes overlap with regions that are also among the wealthier parts of Texas. However, the idea of wealthiest counties depends on how wealth is defined, either by median income, total income, property values or a combination of all variables. For example, Harris County (Houston) is economically powerful overall but doesn’t show a large percentage of homes in this specific range because of its wider distribution of both lower- and higher-priced housing. In contrast, parts of Central Texas have a sharper concentration of homes in this bracket, suggesting affordability and demand align more tightly there.</p>
+<p>I selected these two variables because I hypothesized that there would be a positive relationship between commute time and home value, specifically, that the less time someone commutes, the higher their home value would be. The data pulled fails to reject this hypothesis.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
